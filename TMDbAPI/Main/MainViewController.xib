@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="TMDbAPI" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="HFV-dU-VrR" id="NAA-qz-Dv2"/>
+                <outlet property="popularFilmsLabel" destination="M67-an-Fum" id="9QS-T0-DAb"/>
+                <outlet property="searchBar" destination="XvS-fV-E0j" id="L8m-S0-POf"/>
+                <outlet property="segmentedControl" destination="elu-f5-Xqn" id="m7D-NY-sKs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XvS-fV-E0j">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="0.87274427816901412" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="JFR-by-h7f"/>
+                    </connections>
+                </searchBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-dU-VrR">
+                    <rect key="frame" x="0.0" y="141" width="414" height="721"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ukn-IX-BVs">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ZhG-1C-eT6"/>
+                        <outlet property="delegate" destination="-1" id="rkN-Ov-Ob9"/>
+                    </connections>
+                </collectionView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Most Popular Films" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M67-an-Fum">
+                    <rect key="frame" x="10" y="110" width="394" height="31"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="elu-f5-Xqn">
+                    <rect key="frame" x="10" y="110" width="394" height="32"/>
+                    <color key="backgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="0.86735255281690138" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <segments>
+                        <segment title="Movie"/>
+                        <segment title="Person"/>
+                    </segments>
+                    <color key="tintColor" systemColor="linkColor"/>
+                    <color key="selectedSegmentTintColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segmentedControlChanged:" destination="-1" eventType="valueChanged" id="WIm-3k-yWW"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration" identifier="MainViewController"/>
+            <constraints>
+                <constraint firstItem="elu-f5-Xqn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="35K-Sa-ZOP"/>
+                <constraint firstItem="HFV-dU-VrR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="76R-8r-bj3"/>
+                <constraint firstItem="HFV-dU-VrR" firstAttribute="top" secondItem="elu-f5-Xqn" secondAttribute="bottom" id="7zq-i9-9p6"/>
+                <constraint firstItem="XvS-fV-E0j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8V4-2Y-TOq"/>
+                <constraint firstItem="M67-an-Fum" firstAttribute="bottom" secondItem="elu-f5-Xqn" secondAttribute="bottom" id="Cvi-9w-cK4"/>
+                <constraint firstItem="M67-an-Fum" firstAttribute="top" secondItem="elu-f5-Xqn" secondAttribute="top" id="RXR-1G-w3b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XvS-fV-E0j" secondAttribute="trailing" id="Tlh-n6-OXO"/>
+                <constraint firstItem="M67-an-Fum" firstAttribute="trailing" secondItem="elu-f5-Xqn" secondAttribute="trailing" id="WfQ-HT-KG4"/>
+                <constraint firstItem="M67-an-Fum" firstAttribute="leading" secondItem="elu-f5-Xqn" secondAttribute="leading" id="cfb-WB-FT9"/>
+                <constraint firstItem="elu-f5-Xqn" firstAttribute="top" secondItem="XvS-fV-E0j" secondAttribute="bottom" constant="10" id="krT-ox-R7J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HFV-dU-VrR" secondAttribute="bottom" id="lEe-It-KZl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HFV-dU-VrR" secondAttribute="trailing" id="sSW-oa-V8L"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="elu-f5-Xqn" secondAttribute="trailing" constant="10" id="ulg-Uk-LYN"/>
+                <constraint firstItem="XvS-fV-E0j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wg7-aA-F2f"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
